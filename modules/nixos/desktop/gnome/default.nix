@@ -59,8 +59,8 @@ in
       core-shell.enable = true;
       gnome-keyring.enable = true;
       gnome-online-accounts.enable = true;
-      tracker.enable = true;
-      tracker-miners.enable = true;
+      tinysparql.enable = true;
+      localsearch.enable = true;
       sushi.enable = true;
       games.enable = false;
     };

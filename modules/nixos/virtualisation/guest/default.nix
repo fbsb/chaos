@@ -2,16 +2,17 @@
   config,
   lib,
   virtual ? false,
+  namespace,
   ...
 }:
 
 with lib;
 
 let
-  cfg = config.virtualisation.guest;
+  cfg = config.${namespace}.virtualisation.guest;
 in
 {
-  options.virtualisation.guest = {
+  options.${namespace}.virtualisation.guest = {
     enable = mkOption {
       type = types.bool;
       default = virtual;

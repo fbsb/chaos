@@ -1,0 +1,27 @@
+sudo nix run 'github:nix-community/disko/v1.11.0#disko-install' -- \
+    --flake /chaos#test-disko \
+    --write-efi-boot-entries \
+    --disk main /dev/sda
+
+
+disko /nix-config/systems/x86_64-linux/tars/disko.nix \
+    --mode format,mount \
+    --arg disk main /dev/sda
+
+
+nix run 'github:nix-community/disko/latest#disko' --
+nix run 'github:nix-community/disko/latest#disko-install' --
+
+# run with disko file
+disko systems/x86_64-linux/test-disko/disko.nix --mode format,mount  --argstr disk /dev/sda
+
+# run as flake
+disko --flake /chaos#test-disko --mode format,mount
+nixos-install --root /mnt --no-root-password --flake /chaos#test-disko
+
+
+# format and install in one step but will rewrite the disk and you will lose data
+disko-install --flake /chaos#test-disko --mode format --disk main /dev/sda
+
+
+nix run -v .#vmConfigurations.test
