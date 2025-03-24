@@ -9,6 +9,8 @@
     disko.inputs.nixpkgs.follows = "nixpkgs";
     disko.url = "github:nix-community/disko/v1.11.0";
 
+    nixos-generators.url = "github:nix-community/nixos-generators";
+    nixos-generators.inputs.nixpkgs.follows = "nixpkgs";
   };
 
   outputs =
