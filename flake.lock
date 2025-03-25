@@ -74,6 +74,27 @@
         "type": "github"
       }
     },
+    "home-manager": {
+      "inputs": {
+        "nixpkgs": [
+          "nixpkgs"
+        ]
+      },
+      "locked": {
+        "lastModified": 1742655702,
+        "narHash": "sha256-jbqlw4sPArFtNtA1s3kLg7/A4fzP4GLk9bGbtUJg0JQ=",
+        "owner": "nix-community",
+        "repo": "home-manager",
+        "rev": "0948aeedc296f964140d9429223c7e4a0702a1ff",
+        "type": "github"
+      },
+      "original": {
+        "owner": "nix-community",
+        "ref": "release-24.11",
+        "repo": "home-manager",
+        "type": "github"
+      }
+    },
     "nixlib": {
       "locked": {
         "lastModified": 1736643958,
@@ -145,6 +166,7 @@
     "root": {
       "inputs": {
         "disko": "disko",
+        "home-manager": "home-manager",
         "nixos-generators": "nixos-generators",
         "nixpkgs": "nixpkgs",
         "nixpkgs-unstable": "nixpkgs-unstable",

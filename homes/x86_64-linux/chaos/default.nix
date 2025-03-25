@@ -1,0 +1,21 @@
+{
+  pkgs,
+  ...
+}:
+
+{
+  home.packages = [
+    pkgs.usbutils
+  ];
+
+  chaos = {
+    cli.git = {
+      enable = true;
+      userName = "Chaos Test";
+      userEmail = "chaos.test@example.com";
+    };
+
+  };
+
+  home.stateVersion = "24.11"; # WARN: Changing this might break things. Just leave it.
+}
