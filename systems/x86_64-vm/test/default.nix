@@ -15,5 +15,8 @@
       "-vga virtio"
       "-device usb-host,vendorid=0x1050,productid=0x0407"
     ];
+    writableStoreUseTmpfs = false;
+    useNixStoreImage = true;
+    writableStore = true;
   };
 }
