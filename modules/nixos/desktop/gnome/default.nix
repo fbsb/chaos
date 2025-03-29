@@ -26,7 +26,6 @@ in
         dash-to-dock
         clipboard-indicator
         blur-my-shell
-        just-perfection
         sound-output-device-chooser
       ];
       description = "List of GNOME shell extensions to install";
