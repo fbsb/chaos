@@ -14,6 +14,7 @@
       userName = "Chaos Test";
       userEmail = "chaos.test@example.com";
     };
+    apps.ghostty.enable = true;
 
   };
 
