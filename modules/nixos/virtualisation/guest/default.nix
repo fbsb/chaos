@@ -27,7 +27,7 @@ in
     # Enable VirtualBox guest additions when in a VBox VM
     virtualisation.virtualbox.guest.enable = true;
 
-    # TODO add all users to vboxsf group
+    ${namespace}.users.extraGroups = [ "vboxsf" ];
 
     # Additional helpful settings for VMs
     services.spice-vdagentd.enable = mkIf config.services.xserver.enable true;
