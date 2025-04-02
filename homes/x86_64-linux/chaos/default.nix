@@ -9,6 +9,7 @@
   ];
 
   chaos = {
+    cli.zsh.enable = true;
     cli.git = {
       enable = true;
       userName = "Chaos Test";

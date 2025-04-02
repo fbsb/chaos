@@ -20,6 +20,11 @@ with lib;
   chaos = {
     desktop.gnome.enable = true;
 
+    shell.zsh = {
+      enable = true;
+      defaultShell = true;
+    };
+
     system.boot = {
       enable = true;
       type = "systemd";
