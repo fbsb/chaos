@@ -16,7 +16,7 @@
       userEmail = "chaos.test@example.com";
     };
     apps.ghostty.enable = true;
-
+    crypto.gpg.enable = true;
   };
 
   home.stateVersion = "24.11"; # WARN: Changing this might break things. Just leave it.
