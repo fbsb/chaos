@@ -30,6 +30,8 @@ with lib;
       type = "systemd";
     };
 
+    services.flatpak.enable = true;
+
     users.users = {
       chaos = {
         description = "Chaos Test";

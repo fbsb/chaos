@@ -14,6 +14,8 @@
 
     home-manager.url = "github:nix-community/home-manager/release-24.11";
     home-manager.inputs.nixpkgs.follows = "nixpkgs";
+
+    nix-flatpak.url = "github:gmodena/nix-flatpak/?ref=latest";
   };
 
   outputs =
@@ -26,9 +28,14 @@
         allowUnfree = true;
       };
 
+      homes.modules = with inputs; [
+        nix-flatpak.homeManagerModules.nix-flatpak
+      ];
+
       systems.modules.nixos = with inputs; [
         disko.nixosModules.disko
         home-manager.nixosModules.home-manager
+        nix-flatpak.nixosModules.nix-flatpak
       ];
 
       snowfall = {

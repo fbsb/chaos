@@ -16,6 +16,7 @@
       userEmail = "chaos.test@example.com";
     };
     apps.ghostty.enable = true;
+    services.flatpak.enable = true;
     crypto.gpg.enable = true;
   };
 
