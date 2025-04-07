@@ -2,7 +2,6 @@
   namespace,
   config,
   lib,
-  pkgs,
   ...
 }:
 with lib;
