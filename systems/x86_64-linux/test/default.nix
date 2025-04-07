@@ -27,7 +27,7 @@ with lib;
 
     system.boot = {
       enable = true;
-      type = "systemd";
+      type = "grub";
     };
 
     services.flatpak.enable = true;
