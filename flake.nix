@@ -16,6 +16,8 @@
     home-manager.inputs.nixpkgs.follows = "nixpkgs";
 
     nix-flatpak.url = "github:gmodena/nix-flatpak/?ref=latest";
+
+    impermanence.url = "github:nix-community/impermanence";
   };
 
   outputs =
@@ -36,6 +38,7 @@
         disko.nixosModules.disko
         home-manager.nixosModules.home-manager
         nix-flatpak.nixosModules.nix-flatpak
+        impermanence.nixosModules.impermanence
       ];
 
       snowfall = {

@@ -25,9 +25,13 @@ with lib;
       defaultShell = true;
     };
 
-    system.boot = {
-      enable = true;
-      type = "grub";
+    system = {
+      boot = {
+        enable = true;
+        type = "grub";
+      };
+
+      impermanence.enable = true;
     };
 
     services.flatpak.enable = true;
