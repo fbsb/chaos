@@ -1,20 +1,18 @@
 {
-  namespace,
-  lib,
   config,
+  lib,
+  namespace,
   ...
 }:
+
 with lib;
+
 let
   cfg = config.${namespace}.cli.git;
 in
 {
   options.${namespace}.cli.git = {
-    enable = mkOption {
-      type = types.bool;
-      description = "Whether to enable Git configuration and related settings";
-      default = false;
-    };
+    enable = mkEnableOption "Git";
 
     userName = mkOption {
       type = types.str;

@@ -1,8 +1,8 @@
 {
   config,
   lib,
-  pkgs,
   namespace,
+  pkgs,
   ...
 }:
 
@@ -13,19 +13,15 @@ let
 in
 {
   options.${namespace}.desktop.gnome = {
-    enable = mkOption {
-      type = types.bool;
-      default = false;
-      description = "Whether to enable GNOME desktop environment";
-    };
+    enable = mkEnableOption "GNOME desktop environment";
 
     extensions = mkOption {
       type = types.listOf types.package;
       default = with pkgs.gnomeExtensions; [
         appindicator
-        dash-to-dock
-        clipboard-indicator
         blur-my-shell
+        clipboard-indicator
+        dash-to-dock
         sound-output-device-chooser
       ];
       description = "List of GNOME shell extensions to install";
@@ -42,9 +38,9 @@ in
     environment.systemPackages =
       with pkgs;
       [
-        gnome-tweaks
-        dconf-editor
         adwaita-icon-theme
+        dconf-editor
+        gnome-tweaks
       ]
       ++ cfg.extensions;
 
@@ -54,14 +50,14 @@ in
 
     # Enable GNOME-related services
     services.gnome = {
-      core-utilities.enable = true;
       core-shell.enable = true;
+      core-utilities.enable = true;
+      games.enable = false;
       gnome-keyring.enable = true;
       gnome-online-accounts.enable = true;
-      tinysparql.enable = true;
       localsearch.enable = true;
       sushi.enable = true;
-      games.enable = false;
+      tinysparql.enable = true;
     };
 
     # Enable fractional scaling

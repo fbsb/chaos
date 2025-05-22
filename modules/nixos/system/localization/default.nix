@@ -12,11 +12,7 @@ let
 in
 {
   options.${namespace}.system.localization = {
-    enable = mkOption {
-      type = types.bool;
-      default = true;
-      description = "Whether to enable ${namespace} system localization settings.";
-    };
+    enable = mkEnableOption "system localization";
 
     timezone = mkOption {
       type = types.str;
@@ -44,13 +40,13 @@ in
 
     xkbLayout = mkOption {
       type = types.str;
-      default = "us,de,de";
+      default = "us,de";
       description = "The keyboard layout for X11";
     };
 
     xkbVariant = mkOption {
       type = types.str;
-      default = "altgr-intl,,bone";
+      default = "altgr-intl,";
       description = "The keyboard variant for X11";
     };
 

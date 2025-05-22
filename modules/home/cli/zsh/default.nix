@@ -1,17 +1,20 @@
 {
-  lib,
   config,
+  lib,
   namespace,
   pkgs,
   ...
 }:
+
 with lib;
+
 let
   cfg = config.${namespace}.cli.zsh;
 in
 {
   options.${namespace}.cli.zsh = {
-    enable = mkEnableOption "Zsh configuration";
+    enable = mkEnableOption "Zsh shell";
+
     omzExtraPlugins = mkOption {
       type = types.listOf types.str;
       default = [ ];

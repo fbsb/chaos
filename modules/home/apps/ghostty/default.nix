@@ -1,20 +1,18 @@
 {
-  namespace,
   config,
   lib,
+  namespace,
   ...
 }:
+
 with lib;
+
 let
   cfg = config.${namespace}.apps.ghostty;
 in
 {
   options.${namespace}.apps.ghostty = {
-    enable = mkOption {
-      type = types.bool;
-      default = false;
-      description = "Enable Ghostty terminal emulator";
-    };
+    enable = mkEnableOption "Ghostty terminal emulator";
   };
 
   config = mkIf cfg.enable {

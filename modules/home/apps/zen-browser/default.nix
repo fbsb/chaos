@@ -12,7 +12,7 @@ let
 in
 {
   options.${namespace}.apps.zen-browser = {
-    enable = mkEnableOption "Enable zen browser";
+    enable = mkEnableOption "Zen browser";
   };
 
   config = mkIf cfg.enable {

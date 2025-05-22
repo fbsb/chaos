@@ -4,17 +4,18 @@
   namespace,
   ...
 }:
+
 with lib;
+
+let
+  cfg = config.${namespace}.system.networking;
+in
 {
-  options.${namespace}.networking = {
-    enable = mkOption {
-      type = types.bool;
-      default = true;
-      description = "${namespace} networking configuration";
-    };
+  options.${namespace}.system.networking = {
+    enable = mkEnableOption "system networking";
   };
 
-  config = mkIf config.${namespace}.networking.enable {
+  config = mkIf cfg.enable {
     # Enable NetworkManager for network configuration
     networking = {
       networkmanager.enable = true;

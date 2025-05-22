@@ -14,7 +14,8 @@ let
 in
 {
   options.${namespace}.system.impermanence = {
-    enable = mkEnableOption "Enable system impermanence";
+    enable = mkEnableOption "system impermanence";
+
     persistentPath = mkOption {
       type = types.str;
       default = "/persistent";

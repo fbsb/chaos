@@ -1,8 +1,8 @@
 {
   config,
   lib,
-  pkgs,
   namespace,
+  pkgs,
   ...
 }:
 
@@ -13,13 +13,9 @@ let
 in
 {
   options.${namespace}.system.boot = {
-    enable = mkOption {
-      type = types.bool;
-      default = false;
-      description = "${namespace} boot configuration";
-    };
+    enable = mkEnableOption "bootloader";
 
-    type = mkOption {
+    flavour = mkOption {
       type = types.enum [
         "systemd"
         "grub"
@@ -33,7 +29,7 @@ in
     {
       boot.loader.efi.canTouchEfiVariables = true;
     }
-    (mkIf (cfg.type == "systemd") {
+    (mkIf (cfg.flavour == "systemd") {
       boot.loader.grub.enable = false;
       boot.loader.systemd-boot = {
         enable = true;
@@ -43,7 +39,7 @@ in
         consoleMode = "max";
       };
     })
-    (mkIf (cfg.type == "grub") {
+    (mkIf (cfg.flavour == "grub") {
       boot.loader.systemd-boot.enable = false;
       boot.loader.grub = {
         enable = true;
