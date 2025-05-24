@@ -29,8 +29,6 @@ with lib;
     };
   };
 
-  environment.systemPackages = with pkgs; [ htop ];
-
   nix.registry.nixpkgs.flake = inputs.nixpkgs;
 
   # This option defines the first version of NixOS you have installed on this particular machine,

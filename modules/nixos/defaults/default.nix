@@ -28,6 +28,7 @@ in
       system.boot.enable = true;
       system.boot.loader = "grub";
       system.impermanence.enable = true;
+      programs.base-utils.enable = true;
     };
   };
 }
