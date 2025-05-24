@@ -2,7 +2,6 @@
   config,
   lib,
   namespace,
-  pkgs,
   ...
 }:
 
@@ -15,7 +14,7 @@ in
   options.${namespace}.system.boot = {
     enable = mkEnableOption "bootloader";
 
-    flavour = mkOption {
+    loader = mkOption {
       type = types.enum [
         "systemd"
         "grub"
@@ -25,36 +24,12 @@ in
     };
   };
 
-  config = mkIf cfg.enable (mkMerge [
-    {
-      boot.loader.efi.canTouchEfiVariables = true;
-    }
-    (mkIf (cfg.flavour == "systemd") {
-      boot.loader.grub.enable = false;
-      boot.loader.systemd-boot = {
-        enable = true;
-        editor = false;
-        rebootForBitlocker = true;
-        configurationLimit = 10;
-        consoleMode = "max";
-      };
-    })
-    (mkIf (cfg.flavour == "grub") {
-      boot.loader.systemd-boot.enable = false;
-      boot.loader.grub = {
-        enable = true;
-        device = "nodev";
-        efiSupport = true;
-        useOSProber = true;
-        enableCryptodisk = true;
-        extraEntries = ''
-          menuentry "UEFI Setup" {
-            fwsetup
-          }
-        '';
-      };
-      boot.loader.efi.canTouchEfiVariables = true;
-      environment.systemPackages = [ pkgs.efibootmgr ];
-    })
-  ]);
+  imports = [
+    ./grub.nix
+    ./systemd-boot.nix
+  ];
+
+  config = mkIf cfg.enable {
+    boot.loader.efi.canTouchEfiVariables = true;
+  };
 }
