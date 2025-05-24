@@ -18,24 +18,6 @@ with lib;
   # boot.extraModulePackages = [ ];
 
   chaos = {
-    desktop.gnome.enable = true;
-
-    shell.zsh = {
-      enable = true;
-      defaultShell = true;
-    };
-
-    system = {
-      boot = {
-        enable = true;
-        type = "grub";
-      };
-
-      impermanence.enable = true;
-    };
-
-    services.flatpak.enable = true;
-
     users.users = {
       chaos = {
         description = "Chaos Test";

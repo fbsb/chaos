@@ -7,6 +7,11 @@
     ../../x86_64-linux/test
   ];
 
+  chaos = {
+    # impermanence does not work with qemu vms yet
+    system.impermanence.enable = false;
+  };
+
   virtualisation = {
     diskSize = 20 * 1024;
     memorySize = 8 * 1024;
