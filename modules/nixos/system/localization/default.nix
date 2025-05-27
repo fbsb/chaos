@@ -76,6 +76,7 @@ in
         LC_TELEPHONE = cfg.extraLocale;
         LC_TIME = cfg.extraLocale;
       };
+      supportedLocales = [ "all" ];
     };
 
     # Configure console keymap
