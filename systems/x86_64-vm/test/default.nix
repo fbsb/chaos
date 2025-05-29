@@ -1,4 +1,5 @@
 {
+  pkgs,
   ...
 }:
 {
@@ -10,6 +11,7 @@
   chaos = {
     # impermanence does not work with qemu vms yet
     system.impermanence.enable = false;
+    virtualisation.guest.enable = true;
   };
 
   virtualisation = {

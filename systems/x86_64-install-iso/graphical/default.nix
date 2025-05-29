@@ -1,17 +1,12 @@
 {
   config,
-  pkgs,
   lib,
   modulesPath,
+  pkgs,
   ...
 }:
 
 with lib;
-
-let
-
-  extraLocale = "de_DE.UTF-8";
-in
 
 {
   imports = [
@@ -20,7 +15,8 @@ in
 
   chaos = {
     defaults.enable = false;
-    system.localization.enable = mkForce true;
+    system.localization.enable = true;
+    virtualisation.guest.enable = true;
   };
 
   isoImage.isoName = mkForce "${config.isoImage.isoBaseName}-${config.system.nixos.release}-${pkgs.stdenv.hostPlatform.system}.iso";
