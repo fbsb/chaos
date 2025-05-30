@@ -12,11 +12,7 @@ let
 in
 {
   options.${namespace}.virtualisation.guest = {
-    enable = mkOption {
-      type = types.bool;
-      default = false;
-      description = "Whether to enable guest services for virtual machines.";
-    };
+    enable = mkEnableOption "vm guest services";
   };
 
   config = mkIf cfg.enable {

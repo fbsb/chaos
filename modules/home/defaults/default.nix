@@ -13,10 +13,8 @@ let
 in
 {
   options.${namespace}.defaults = {
-    enable = mkOption {
+    enable = mkEnableOption "${namespace} home manager defaults" // {
       default = true;
-      description = "Wether to enable the ${namespace} home manager defaults";
-      type = types.bool;
     };
   };
 
