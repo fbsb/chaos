@@ -25,10 +25,10 @@ in
       desktop.gnome.enable = true;
       services.flatpak.enable = true;
       shell.zsh.enable = true;
-      system.boot.enable = true;
-      system.boot.loader = "grub";
-      system.impermanence.enable = true;
-      system.localization.enable = true;
+      boot.enable = true;
+      boot.loader = "grub";
+      impermanence.enable = true;
+      localization.enable = true;
       programs.base-utils.enable = true;
     };
   };

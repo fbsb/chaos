@@ -8,10 +8,10 @@
 with lib;
 
 let
-  cfg = config.${namespace}.system.networking;
+  cfg = config.${namespace}.networking;
 in
 {
-  options.${namespace}.system.networking = {
+  options.${namespace}.networking = {
     enable = mkEnableOption "system networking";
   };
 

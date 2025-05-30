@@ -8,12 +8,12 @@
 with lib;
 
 let
-  cfg = config.${namespace}.system.impermanence;
+  cfg = config.${namespace}.impermanence;
   isBtrfs = config.fileSystems."/".fsType == "btrfs";
   rootDevice = config.fileSystems."/".device;
 in
 {
-  options.${namespace}.system.impermanence = {
+  options.${namespace}.impermanence = {
     enable = mkEnableOption "system impermanence";
 
     persistentPath = mkOption {

@@ -8,10 +8,10 @@
 with lib;
 
 let
-  cfg = config.${namespace}.system.localization;
+  cfg = config.${namespace}.localization;
 in
 {
-  options.${namespace}.system.localization = {
+  options.${namespace}.localization = {
     enable = mkEnableOption "system localization";
 
     timezone = mkOption {

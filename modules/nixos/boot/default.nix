@@ -8,10 +8,10 @@
 with lib;
 
 let
-  cfg = config.${namespace}.system.boot;
+  cfg = config.${namespace}.boot;
 in
 {
-  options.${namespace}.system.boot = {
+  options.${namespace}.boot = {
     enable = mkEnableOption "bootloader";
 
     loader = mkOption {

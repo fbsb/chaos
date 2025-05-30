@@ -15,7 +15,7 @@ with lib;
 
   chaos = {
     defaults.enable = false;
-    system.localization.enable = true;
+    localization.enable = true;
     virtualisation.guest.enable = true;
   };
 

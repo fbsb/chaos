@@ -9,7 +9,7 @@
 with lib;
 
 let
-  cfg = config.${namespace}.system.boot;
+  cfg = config.${namespace}.boot;
   isSystemd = cfg.loader == "systemd";
 in
 {
