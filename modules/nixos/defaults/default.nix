@@ -12,25 +12,22 @@ let
 in
 {
   options.${namespace}.defaults = {
-    enable = mkOption {
+    enable = mkEnableOption "${namespace} defaults" // {
       default = true;
-      description = "Wether to enable the ${namespace} defaults";
-      type = types.bool;
     };
   };
 
   config = mkIf cfg.enable {
     ${namespace} = mkDefaultValues {
-      # Apply the function here
-      desktop.gnome.enable = true;
-      services.flatpak.enable = true;
-      shell.zsh.enable = true;
       boot.enable = true;
       boot.loader = "grub";
+      desktop.gnome.enable = true;
       impermanence.enable = true;
+      kernel.enable = true;
       localization.enable = true;
       programs.base-utils.enable = true;
-      kernel.enable = true;
+      services.flatpak.enable = true;
+      shell.zsh.enable = true;
     };
   };
 }
