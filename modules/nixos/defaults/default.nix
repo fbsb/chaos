@@ -30,6 +30,7 @@ in
       impermanence.enable = true;
       localization.enable = true;
       programs.base-utils.enable = true;
+      kernel.enable = true;
     };
   };
 }
