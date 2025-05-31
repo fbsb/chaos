@@ -22,6 +22,7 @@ in
     ${namespace} = mkDefaultValues {
       apps.ghostty.enable = true;
       apps.zen-browser.enable = true;
+      apps.vscode.enable = true;
       cli.git.enable = true;
       crypto.gpg.enable = true;
       services.flatpak.enable = true;
