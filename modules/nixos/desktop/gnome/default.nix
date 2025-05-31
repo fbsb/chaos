@@ -51,7 +51,7 @@ in
     # Enable GNOME-related services
     services.gnome = {
       core-shell.enable = true;
-      core-utilities.enable = true;
+      core-apps.enable = true;
       games.enable = false;
       gnome-keyring.enable = true;
       gnome-online-accounts.enable = true;
