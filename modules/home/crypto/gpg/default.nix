@@ -60,7 +60,7 @@ in
     services.gpg-agent = {
       enable = true;
 
-      pinentryPackage = cfg.pinentryPackage;
+      pinentry.package = cfg.pinentryPackage;
 
       enableScDaemon = true;
 
