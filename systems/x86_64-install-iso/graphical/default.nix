@@ -19,23 +19,10 @@ with lib;
     kernel.enable = true;
     localization.enable = true;
     virtualisation.guest.enable = true;
+    programs.base-utils.enable = true;
   };
 
   hardware.enableAllFirmware = true;
-
-  programs.partition-manager.enable = true;
-
-  environment.systemPackages = with pkgs; [
-    age
-    btrfs-progs
-    disko
-    git
-    home-manager
-    htop
-    sops
-    ssh-to-age
-    util-linux
-  ];
 
   services.xserver.desktopManager.gnome = {
     # Add Firefox and other tools useful for installation to the launcher

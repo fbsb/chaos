@@ -17,7 +17,7 @@ in
 
   config = mkIf cfg.enable {
     services.qemuGuest.enable = mkForce true;
-    services.xe-guest-utilities.enable = mkForce true;
+    # services.xe-guest-utilities.enable = mkForce true;
     virtualisation.hypervGuest.enable = mkForce true;
     virtualisation.virtualbox.guest.enable = mkForce true;
     virtualisation.vmware.guest.enable = mkForce true;
