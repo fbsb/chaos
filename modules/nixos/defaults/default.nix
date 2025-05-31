@@ -26,6 +26,7 @@ in
       impermanence.enable = true;
       kernel.enable = true;
       localization.enable = true;
+      nix.enable = true;
       programs.base-utils.enable = true;
       services.flatpak.enable = true;
       shell.zsh.enable = true;

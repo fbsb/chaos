@@ -20,6 +20,7 @@ with lib;
     localization.enable = true;
     virtualisation.guest.enable = true;
     programs.base-utils.enable = true;
+    nix.enable = true;
   };
 
   hardware.enableAllFirmware = true;
