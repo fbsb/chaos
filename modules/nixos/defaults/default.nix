@@ -22,6 +22,7 @@ in
       boot.enable = true;
       boot.loader = "grub";
       desktop.gnome.enable = true;
+      hardware.nvidia.enable = true;
       impermanence.enable = true;
       kernel.enable = true;
       localization.enable = true;

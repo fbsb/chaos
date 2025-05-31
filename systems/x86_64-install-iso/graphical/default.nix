@@ -15,12 +15,11 @@ with lib;
 
   chaos = {
     defaults.enable = false;
+    hardware.nvidia.enable = true;
+    kernel.enable = true;
     localization.enable = true;
     virtualisation.guest.enable = true;
   };
-
-  isoImage.isoName = mkForce "${config.isoImage.isoBaseName}-${config.system.nixos.release}-${pkgs.stdenv.hostPlatform.system}.iso";
-  isoImage.squashfsCompression = "zstd -Xcompression-level 3";
 
   hardware.enableAllFirmware = true;
 
