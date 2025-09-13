@@ -1,15 +1,19 @@
 {
   inputs = {
-    nixpkgs.url = "github:nixos/nixpkgs/nixos-25.05";
+    nixpkgs.url = "github:NixOS/nixpkgs/nixos-25.05";
 
-    snowfall-lib.url = "github:snowfallorg/lib";
-    snowfall-lib.inputs.nixpkgs.follows = "nixpkgs";
-
-    disko.inputs.nixpkgs.follows = "nixpkgs";
-    disko.url = "github:nix-community/disko/v1.11.0";
+    flake-parts.url = "github:hercules-ci/flake-parts";
+    flake-parts.inputs.nixpkgs-lib.follows = "nixpkgs";
 
     nixos-generators.url = "github:nix-community/nixos-generators";
     nixos-generators.inputs.nixpkgs.follows = "nixpkgs";
+
+    ez-configs.url = "github:ehllie/ez-configs";
+    ez-configs.inputs.nixpkgs.follows = "nixpkgs";
+    ez-configs.inputs.flake-parts.follows = "flake-parts";
+
+    disko.inputs.nixpkgs.follows = "nixpkgs";
+    disko.url = "github:nix-community/disko/v1.11.0";
 
     home-manager.url = "github:nix-community/home-manager/release-25.05";
     home-manager.inputs.nixpkgs.follows = "nixpkgs";
@@ -19,33 +23,63 @@
     impermanence.url = "github:nix-community/impermanence";
   };
 
-  outputs =
-    inputs:
-    inputs.snowfall-lib.mkFlake {
-      inherit inputs;
-      src = ./.;
+  outputs = inputs@{ self, flake-parts, ez-configs, ... }:
+    let
+      lib = inputs.nixpkgs.lib;
+      chaosLib = import ./lib { inherit lib; };
+    in
+    flake-parts.lib.mkFlake
+      {
+        inherit inputs;
+      }
+      {
+        imports = [
+          ez-configs.flakeModule
+        ];
 
-      channels-config = {
-        allowUnfree = true;
-      };
+        debug = true;
 
-      homes.modules = with inputs; [
-        nix-flatpak.homeManagerModules.nix-flatpak
-      ];
+        # mkFlake expects this to be present,
+        # so even if we don't use anything from perSystem, we need to set it to something.
+        # You can set it to anything you want if you also want to provide perSystem outputs in your flake.
+        systems = [
+          "x86_64-linux"
+        ];
 
-      systems.modules.nixos = with inputs; [
-        disko.nixosModules.disko
-        home-manager.nixosModules.home-manager
-        nix-flatpak.nixosModules.nix-flatpak
-        impermanence.nixosModules.impermanence
-      ];
+        perSystem = { system, ... }: {
+          packages = {
+            installer = inputs.nixos-generators.nixosGenerate {
+              inherit system;
 
-      snowfall = {
-        namespace = "chaos";
-        meta = {
-          name = "chaos";
-          title = "chaos | modular nixos based operating system";
+              format = "install-iso";
+              specialArgs = {
+                inherit inputs self chaosLib;
+              };
+              modules = [
+                ./installer
+              ];
+            };
+          };
+        };
+
+        ezConfigs = {
+          root = ./.;
+          globalArgs = {
+            inherit inputs chaosLib;
+          };
+
+          home.modulesDirectory = ./modules/home;
+          home.configurationsDirectory = ./users;
+
+          nixos.modulesDirectory = ./modules/nixos;
+          nixos.configurationsDirectory = ./hosts;
+
+          nixos.hosts.tars.userHomeModules = [ "fbsb" ];
+        };
+
+        flake = {
+          lib = chaosLib;
         };
       };
-    };
+
 }
