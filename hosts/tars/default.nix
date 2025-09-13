@@ -12,7 +12,7 @@
     disko = {
       enable = true;
       device = "/dev/nvme0n1";
-      luksPartitionSize = "500G";
+      luksPartitionSize = "2T";
       swapSize = "72G";
     };
     virtualisation.guest.enable = true;
@@ -23,9 +23,8 @@
         isNormalUser = true;
         extraGroups = [ "wheel" "networkmanager" ];
         # generate with
-        # $ nix-shell -p mkpasswd --run 'mkpasswd -m SHA-512 -s'
-        # $ nix run nixpkgs#mkpasswd -- -m SHA-512 -s
-        hashedPassword = "$6$ZJqBzixcFY4Xouxk$OtmRe/Rco6mjBBN5nNj5VZ//XhQelP/F6wXncfH6mFyGD4hDHN/RExeE8c5QBPlSfOY6Swerxd8ov8lIcgdqF1"; # testtest
+        # $ nix run nixpkgs#mkpasswd -- -m scrypt
+        hashedPassword = "$7$CU..../....AmA1g5gg5cK7GRQ4rs5uS1$di2/tDJ3O2fNgNuYCPHQMUGTvlVV/h8l3pixX40.rU8";
       };
     };
   };
