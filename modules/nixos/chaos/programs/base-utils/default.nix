@@ -27,7 +27,11 @@ in
       disko
       git
       home-manager
+      btop
       htop
+      usbutils
+      pciutils
+      lshw
       jq
       sops
       ssh-to-age
