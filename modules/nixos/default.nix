@@ -17,7 +17,7 @@ in
       desktop.gnome.enable = true;
       hardware.nvidia.enable = false;
       impermanence.enable = true;
-      kernel.enable = true;
+      kernel.enable = false;
       localization.enable = true;
       nix.enable = true;
       programs.base-utils.enable = true;

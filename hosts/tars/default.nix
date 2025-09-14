@@ -15,7 +15,8 @@
       luksPartitionSize = "2T";
       swapSize = "72G";
     };
-    virtualisation.guest.enable = true;
+    
+    hardware.nvidia.enable = true;
 
     users.users = {
       fbsb = {
