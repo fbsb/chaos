@@ -17,6 +17,7 @@ in
       cli.zsh.enable = true;
       crypto.gpg.enable = true;
       services.flatpak.enable = true;
+      dev.nix.enable = true;
     };
   };
 }
