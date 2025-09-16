@@ -67,6 +67,11 @@ in
             reflogExpire = "never";
             pruneExpire = "never";
           };
+          credential = {
+            helper = [
+              "cache --timeout 14400"
+            ];
+          };
         };
         aliases = {
           lg = "log --graph --abbrev-commit --decorate --format=format:'%C(bold blue)%h%C(reset) - %C(bold green)(%ar)%C(reset) %C(white)%s%C(reset) %C(dim white)- %an <%ae> %C(reset)%C(auto)%d%C(reset)'";
@@ -78,9 +83,6 @@ in
       };
       programs.git-credential-oauth = {
         enable = true;
-        extraFlags = [
-          "cache --timeout 14400"
-        ];
       };
     }
   ]);
