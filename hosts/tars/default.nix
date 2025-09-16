@@ -1,5 +1,6 @@
-{ inputs
-, ...
+{
+  inputs,
+  ...
 }:
 {
   imports = [
@@ -15,14 +16,17 @@
       luksPartitionSize = "2T";
       swapSize = "72G";
     };
-    
+
     hardware.nvidia.enable = true;
 
     users.users = {
       fbsb = {
         description = "Fabian Sabau";
         isNormalUser = true;
-        extraGroups = [ "wheel" "networkmanager" ];
+        extraGroups = [
+          "wheel"
+          "networkmanager"
+        ];
         # generate with
         # $ nix run nixpkgs#mkpasswd -- -m scrypt
         hashedPassword = "$7$CU..../....AmA1g5gg5cK7GRQ4rs5uS1$di2/tDJ3O2fNgNuYCPHQMUGTvlVV/h8l3pixX40.rU8";

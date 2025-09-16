@@ -1,7 +1,8 @@
-{ config
-, lib
-, pkgs
-, ...
+{
+  config,
+  lib,
+  pkgs,
+  ...
 }:
 let
   inherit (lib)
@@ -75,7 +76,8 @@ in
         plugins = [
           "git"
           "history"
-        ] ++ cfg.omzExtraPlugins;
+        ]
+        ++ cfg.omzExtraPlugins;
       };
     };
 

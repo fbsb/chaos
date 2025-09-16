@@ -1,4 +1,7 @@
-{ ezHomeModules, lib, ... }:
+{
+  lib,
+  ...
+}:
 let
   inherit (lib) mkDefault;
 in

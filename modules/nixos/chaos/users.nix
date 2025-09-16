@@ -1,11 +1,18 @@
-{ config
-, lib
-, inputs
-, ...
+{
+  config,
+  lib,
+  inputs,
+  ...
 }:
 
 let
-  inherit (lib) mkIf mkOption mkEnableOption types mapAttrs;
+  inherit (lib)
+    mkIf
+    mkOption
+    mkEnableOption
+    types
+    mapAttrs
+    ;
   cfg = config.chaos.users;
 in
 {
@@ -61,15 +68,13 @@ in
   config = mkIf cfg.enable {
     users.mutableUsers = false;
 
-    users.users = mapAttrs
-      (name: user: {
-        inherit (user)
-          description
-          isNormalUser
-          ;
-        extraGroups = user.extraGroups ++ cfg.extraGroups;
-        initialHashedPassword = user.hashedPassword;
-      })
-      cfg.users;
+    users.users = mapAttrs (name: user: {
+      inherit (user)
+        description
+        isNormalUser
+        ;
+      extraGroups = user.extraGroups ++ cfg.extraGroups;
+      initialHashedPassword = user.hashedPassword;
+    }) cfg.users;
   };
 }

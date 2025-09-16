@@ -4,7 +4,8 @@ rec {
   # Recursively find all Nix modules in a directory tree
   # If a directory contains default.nix, it returns that file
   # Otherwise, it returns all .nix files in the directory
-  findIn = dir:
+  findIn =
+    dir:
     let
       # Get all entries in the directory
       entries = builtins.readDir dir;
@@ -20,10 +21,10 @@ rec {
 
       modules =
         if hasDefault then
-        # Directory contains default.nix - return it
+          # Directory contains default.nix - return it
           [ (dir + "/default.nix") ]
         else
-        # Return all .nix files in the directory
+          # Return all .nix files in the directory
           lib.mapAttrsToList (name: _: dir + "/${name}") nixFiles;
     in
     modules ++ subModules;

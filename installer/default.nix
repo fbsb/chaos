@@ -1,7 +1,8 @@
-{ modulesPath
-, pkgs
-, self
-, ...
+{
+  modulesPath,
+  pkgs,
+  self,
+  ...
 }:
 
 {

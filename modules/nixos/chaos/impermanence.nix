@@ -1,7 +1,8 @@
-{ config
-, lib
-, inputs
-, ...
+{
+  config,
+  lib,
+  inputs,
+  ...
 }:
 let
   inherit (lib)
@@ -139,10 +140,12 @@ in
           group = "colord";
           mode = "u=rwx,g=rx,o=";
         }
-      ] ++ cfg.extraDirectories;
+      ]
+      ++ cfg.extraDirectories;
       files = [
         "/etc/machine-id"
-      ] ++ cfg.extraFiles;
+      ]
+      ++ cfg.extraFiles;
     };
   };
 }

@@ -1,5 +1,6 @@
-{ chaosLib
-, ...
+{
+  chaosLib,
+  ...
 }:
 let
   chaosModules = chaosLib.modules.findIn ./chaos;

@@ -23,7 +23,13 @@
     impermanence.url = "github:nix-community/impermanence";
   };
 
-  outputs = inputs@{ self, flake-parts, ez-configs, ... }:
+  outputs =
+    inputs@{
+      self,
+      flake-parts,
+      ez-configs,
+      ...
+    }:
     let
       lib = inputs.nixpkgs.lib;
       chaosLib = import ./lib { inherit lib; };
@@ -46,21 +52,23 @@
           "x86_64-linux"
         ];
 
-        perSystem = { system, ... }: {
-          packages = {
-            installer = inputs.nixos-generators.nixosGenerate {
-              inherit system;
+        perSystem =
+          { system, ... }:
+          {
+            packages = {
+              installer = inputs.nixos-generators.nixosGenerate {
+                inherit system;
 
-              format = "install-iso";
-              specialArgs = {
-                inherit inputs self chaosLib;
+                format = "install-iso";
+                specialArgs = {
+                  inherit inputs self chaosLib;
+                };
+                modules = [
+                  ./installer
+                ];
               };
-              modules = [
-                ./installer
-              ];
             };
           };
-        };
 
         ezConfigs = {
           root = ./.;

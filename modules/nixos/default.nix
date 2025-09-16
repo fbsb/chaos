@@ -1,6 +1,6 @@
-{ lib
-, ezModules
-, ...
+{
+  lib,
+  ...
 }:
 let
   inherit (lib) mkDefault;

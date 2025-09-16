@@ -1,12 +1,12 @@
-{ config
-, lib
-, pkgs
-, ...
+{
+  config,
+  lib,
+  ...
 }:
 let
   inherit (lib) mkEnableOption mkIf;
   cfg = config.chaos.apps.junction;
-  junctionApp =  "re.sonny.Junction.desktop";
+  junctionApp = "re.sonny.Junction.desktop";
 in
 {
   options.chaos.apps.junction = {
