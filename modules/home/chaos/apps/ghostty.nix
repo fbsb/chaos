@@ -20,8 +20,8 @@ in
         keybind = [
           "alt+t=new_tab"
           "ctrl+shift+x=toggle_split_zoom"
-          "alt+shift+d=new_split:down"
-          "alt+d=new_split:right"
+          "alt+s=new_split:down"
+          "alt+shift+s=new_split:right"
           "ctrl+page_up=next_tab"
           "ctrl+page_down=previous_tab"
           "alt+up=goto_split:up"
