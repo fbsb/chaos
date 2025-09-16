@@ -33,14 +33,14 @@ in
       config = {
         common = {
           default = [
-            "gtk"
+            "gnome"
           ];
         };
       };
       extraPortals = with pkgs; [
+        xdg-desktop-portal-gtk
         xdg-desktop-portal-wlr
-        #      xdg-desktop-portal-kde
-        #      xdg-desktop-portal-gtk
+        # xdg-desktop-portal-kde
       ];
     };
 
