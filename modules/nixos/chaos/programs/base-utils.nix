@@ -40,6 +40,7 @@ in
       treecat
       util-linux
       yq-go
+      psmisc
     ];
   };
 }
