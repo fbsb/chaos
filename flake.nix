@@ -53,7 +53,7 @@
         ];
 
         perSystem =
-          { system, ... }:
+          { system, pkgs, ... }:
           {
             packages = {
               installer = inputs.nixos-generators.nixosGenerate {
@@ -67,13 +67,15 @@
                   ./installer
                 ];
               };
+
+              src = pkgs.callPackage ./packages/src { };
             };
           };
 
         ezConfigs = {
           root = ./.;
           globalArgs = {
-            inherit inputs chaosLib;
+            inherit inputs self chaosLib;
           };
 
           home.modulesDirectory = ./modules/home;

@@ -21,6 +21,7 @@ in
       crypto.gpg.enable = true;
       services.flatpak.enable = true;
       dev.nix.enable = true;
+      dev.src.enable = true;
     };
   };
 }
