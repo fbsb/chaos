@@ -16,6 +16,7 @@ in
       apps.zen-browser.enable = true;
       apps.vscode.enable = true;
       apps.junction.enable = true;
+      apps.goxlr.enable = true;
       cli.git.enable = true;
       cli.zsh.enable = true;
       crypto.gpg.enable = true;

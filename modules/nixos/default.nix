@@ -22,6 +22,7 @@ in
       nix.enable = true;
       programs.base-utils.enable = true;
       services.flatpak.enable = true;
+      services.goxlr.enable = true;
       shell.zsh.enable = true;
       users.enable = true;
     };
