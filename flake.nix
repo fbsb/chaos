@@ -13,7 +13,7 @@
     ez-configs.inputs.flake-parts.follows = "flake-parts";
 
     disko.inputs.nixpkgs.follows = "nixpkgs";
-    disko.url = "github:nix-community/disko/v1.11.0";
+    disko.url = "github:nix-community/disko";
 
     home-manager.url = "github:nix-community/home-manager/release-25.05";
     home-manager.inputs.nixpkgs.follows = "nixpkgs";
