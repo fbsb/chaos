@@ -130,7 +130,8 @@ case "${1:-""}" in
         ;;
     go)
         shift 1
-        go $(find "$@")
+        dest=$(find "$@")
+        go "$dest"
         ;;
     find)
         shift 1
