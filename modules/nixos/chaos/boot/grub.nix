@@ -19,6 +19,7 @@ in
       efiSupport = true;
       useOSProber = true;
       enableCryptodisk = true;
+      default = "saved";
       extraEntries = ''
         menuentry "UEFI Setup" {
           fwsetup

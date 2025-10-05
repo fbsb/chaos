@@ -33,6 +33,7 @@ in
   ];
 
   config = mkIf cfg.enable {
+    boot.loader.timeout = 15;
     boot.loader.efi.canTouchEfiVariables = true;
   };
 }
