@@ -21,6 +21,7 @@ in
       localization.enable = true;
       nix.enable = true;
       programs.base-utils.enable = true;
+      programs.tio.enable = true;
       services.flatpak.enable = true;
       services.goxlr.enable = true;
       shell.zsh.enable = true;
