@@ -30,7 +30,7 @@ in
         onCalendar = "daily";
       };
 
-      uninstallUnmanaged = true;
+      uninstallUnmanaged = false;
     };
   };
 }
