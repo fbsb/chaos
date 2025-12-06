@@ -41,6 +41,8 @@ in
       util-linux
       yq-go
       psmisc
+      vim
+      neovim
     ];
   };
 }
