@@ -1,24 +1,14 @@
 # Chaos
 
-## HowTo
+A Nix flake containing NixOS and home-manager configuration for my machines.
 
-### build installer
+⚠️ This is a work in progress, use it at your own risk.
 
-```
-nix build '.#installer'
-```
+## Overview
 
-### install
+This configuration uses the [Dendritic pattern](https://dendrix.oeiuwq.com/Dendritic.html) to organize modules and configuration.
 
-```
-disko --flake github:fbsb/chaos#tars --mode format,mount
-nixos-install --no-channel-copy --no-root-password --flake github:fbsb/chaos#tars
-```
+## Structure
 
-### update / rebuild
-
-```
-sudo nixos-rebuild switch --flake github:fbsb/chaos#tars
-# if needed reinstall bootloader (when changing the bootloader)
-sudo nixos-rebuild switch --install-bootloader --flake github:fbsb/chaos#tars
-```
+- Reusable aspects are organized under the `chaos` namespace
+- Configuration modules live in the `modules/` directory

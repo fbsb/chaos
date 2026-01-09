@@ -1,95 +1,30 @@
+# DO-NOT-EDIT. This file was auto-generated using github:vic/flake-file.
+# Use `nix run .#write-flake` to regenerate it.
 {
+
+  outputs = inputs: inputs.flake-parts.lib.mkFlake { inherit inputs; } (inputs.import-tree ./modules);
+
   inputs = {
-    nixpkgs.url = "github:NixOS/nixpkgs/nixos-25.11";
-
-    flake-parts.url = "github:hercules-ci/flake-parts";
-    flake-parts.inputs.nixpkgs-lib.follows = "nixpkgs";
-
-    nixos-generators.url = "github:nix-community/nixos-generators";
-    nixos-generators.inputs.nixpkgs.follows = "nixpkgs";
-
-    ez-configs.url = "github:ehllie/ez-configs";
-    ez-configs.inputs.nixpkgs.follows = "nixpkgs";
-    ez-configs.inputs.flake-parts.follows = "flake-parts";
-
-    disko.inputs.nixpkgs.follows = "nixpkgs";
-    disko.url = "github:nix-community/disko";
-
-    home-manager.url = "github:nix-community/home-manager/release-25.11";
-    home-manager.inputs.nixpkgs.follows = "nixpkgs";
-
+    den.url = "github:vic/den";
+    disko = {
+      inputs.nixpkgs.follows = "nixpkgs";
+      url = "github:nix-community/disko";
+    };
+    flake-aspects.url = "github:vic/flake-aspects";
+    flake-file.url = "github:vic/flake-file";
+    flake-parts = {
+      inputs.nixpkgs-lib.follows = "nixpkgs-lib";
+      url = "github:hercules-ci/flake-parts";
+    };
+    home-manager = {
+      inputs.nixpkgs.follows = "nixpkgs";
+      url = "github:nix-community/home-manager";
+    };
+    import-tree.url = "github:vic/import-tree";
     nix-flatpak.url = "github:gmodena/nix-flatpak/?ref=latest";
-
-    impermanence.url = "github:nix-community/impermanence";
+    nixpkgs.url = "github:NixOS/nixpkgs";
+    nixpkgs-lib.follows = "nixpkgs";
+    systems.url = "github:nix-systems/default";
   };
-
-  outputs =
-    inputs@{
-      self,
-      flake-parts,
-      ez-configs,
-      ...
-    }:
-    let
-      lib = inputs.nixpkgs.lib;
-      chaosLib = import ./lib { inherit lib; };
-    in
-    flake-parts.lib.mkFlake
-      {
-        inherit inputs;
-      }
-      {
-        imports = [
-          ez-configs.flakeModule
-        ];
-
-        debug = true;
-
-        # mkFlake expects this to be present,
-        # so even if we don't use anything from perSystem, we need to set it to something.
-        # You can set it to anything you want if you also want to provide perSystem outputs in your flake.
-        systems = [
-          "x86_64-linux"
-        ];
-
-        perSystem =
-          { system, pkgs, ... }:
-          {
-            packages = {
-              installer = inputs.nixos-generators.nixosGenerate {
-                inherit system;
-
-                format = "install-iso";
-                specialArgs = {
-                  inherit inputs self chaosLib;
-                };
-                modules = [
-                  ./installer
-                ];
-              };
-
-              src = pkgs.callPackage ./packages/src { };
-            };
-          };
-
-        ezConfigs = {
-          root = ./.;
-          globalArgs = {
-            inherit inputs self chaosLib;
-          };
-
-          home.modulesDirectory = ./modules/home;
-          home.configurationsDirectory = ./users;
-
-          nixos.modulesDirectory = ./modules/nixos;
-          nixos.configurationsDirectory = ./hosts;
-
-          nixos.hosts.tars.userHomeModules = [ "fbsb" ];
-        };
-
-        flake = {
-          lib = chaosLib;
-        };
-      };
 
 }
