@@ -14,6 +14,7 @@ let
 in
 {
   den.hosts.x86_64-linux.tars.users = users;
+  den.hosts.x86_64-linux.case.users = users;
 
   den.homes.x86_64-linux.fbsb = { };
 
@@ -30,6 +31,30 @@ in
     <chaos/berlin>
     <chaos/network>
     <chaos/nvidia>
+    <chaos/flatpak>
+    <chaos/goxlr>
+    <chaos/junction>
+    <chaos/zen-browser>
+    <chaos/ghostty>
+    <chaos/vscode>
+    <chaos/gpg>
+    <chaos/git>
+    <chaos/nix-dev>
+    <chaos/src>
+  ];
+
+  den.aspects.case.includes = [
+    (<chaos/disko> {
+      device = "/dev/nvme0n1";
+      swapSize = "32G";
+    })
+    <chaos/grub>
+    <chaos/plymouth>
+    <chaos/base>
+    <chaos/gnome>
+    <chaos/colemak>
+    <chaos/berlin>
+    <chaos/network>
     <chaos/flatpak>
     <chaos/goxlr>
     <chaos/junction>
