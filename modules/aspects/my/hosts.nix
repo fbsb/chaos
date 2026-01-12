@@ -18,7 +18,10 @@ in
   den.homes.x86_64-linux.fbsb = { };
 
   den.aspects.tars.includes = [
-    (<chaos/disko> { device = "/dev/nvme0n1"; })
+    (<chaos/disko> {
+      device = "/dev/nvme0n1";
+      swapSize = "72G";
+    })
     <chaos/grub>
     <chaos/plymouth>
     <chaos/base>
