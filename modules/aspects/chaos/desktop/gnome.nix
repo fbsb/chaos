@@ -1,8 +1,13 @@
 {
+  __findFile ? __findFile,
   ...
 }:
 {
-  chaos.gnome.nixos =
+
+  # TODO: remove when all systems have migrated to new aspect
+  chaos.gnome.includes = [ <chaos/desktop/gnome> ];
+
+  chaos.desktop.provides.gnome.nixos =
     {
       pkgs,
       ...

@@ -26,7 +26,7 @@ in
     <chaos/grub>
     <chaos/plymouth>
     <chaos/base>
-    <chaos/gnome>
+    <chaos/desktop/gnome>
     <chaos/colemak>
     <chaos/berlin>
     <chaos/network>
@@ -51,8 +51,7 @@ in
     <chaos/grub>
     <chaos/plymouth>
     <chaos/base>
-    <chaos/gnome>
-    <chaos/colemak>
+    <chaos/desktop/cosmic>
     <chaos/berlin>
     <chaos/network>
     <chaos/flatpak>
