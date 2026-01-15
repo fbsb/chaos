@@ -52,6 +52,7 @@ in
     <chaos/plymouth>
     <chaos/base>
     <chaos/desktop/cosmic>
+    <chaos/hardware/framework-13-amd-ai-300>
     <chaos/berlin>
     <chaos/network>
     <chaos/flatpak>
