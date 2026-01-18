@@ -27,10 +27,10 @@ in
     <chaos/plymouth>
     <chaos/base>
     <chaos/desktop/gnome>
+    <chaos/hardware/workstation>
     <chaos/colemak>
     <chaos/berlin>
     <chaos/network>
-    <chaos/nvidia>
     <chaos/flatpak>
     <chaos/goxlr>
     <chaos/junction>

@@ -1,9 +1,10 @@
 {
+  __findFile ? __findFile,
   lib,
   ...
 }:
 {
-  chaos.nvidia = {
+  chaos.hardware._.nvidia = {
     nixos =
       {
         pkgs,
@@ -73,7 +74,7 @@
           vulkan-extension-layer
 
           # nvtop
-          nvtopPackages.full
+          nvtopPackages.nvidia
         ];
       };
   };
