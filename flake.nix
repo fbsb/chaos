@@ -23,7 +23,7 @@
     import-tree.url = "github:vic/import-tree";
     nix-flatpak.url = "github:gmodena/nix-flatpak/?ref=latest";
     nixos-hardware.url = "github:NixOS/nixos-hardware/master";
-    nixpkgs.url = "github:NixOS/nixpkgs";
+    nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
     nixpkgs-lib.follows = "nixpkgs";
     systems.url = "github:nix-systems/default";
   };

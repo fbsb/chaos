@@ -15,7 +15,7 @@
   flake-file.inputs = {
     nixpkgs = {
       # url = "github:NixOS/nixpkgs/nixos-25.11";
-      url = "github:NixOS/nixpkgs";
+      url = "github:NixOS/nixpkgs/nixos-unstable";
     };
 
     home-manager = {
