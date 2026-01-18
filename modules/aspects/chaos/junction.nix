@@ -6,11 +6,13 @@
         junctionAppTarget = junctionApp + ".desktop";
       in
       {
-        services.flatpak = {
-          packages = [
-            junctionApp
-          ];
-        };
+        pkgs,
+        ...
+      }:
+      {
+        environment.systemPackages = with pkgs; [
+          junction
+        ];
 
         xdg.mime = {
           enable = true;
