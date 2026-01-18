@@ -9,6 +9,9 @@
       {
         programs.partition-manager.enable = lib.mkDefault true;
 
+        programs.neovim.defaultEditor = true;
+        programs.neovim.enable = true;
+
         environment.systemPackages = with pkgs; [
           age
           btrfs-progs
@@ -28,8 +31,6 @@
           util-linux
           yq-go
           psmisc
-          vim
-          neovim
           tio
         ];
       };
