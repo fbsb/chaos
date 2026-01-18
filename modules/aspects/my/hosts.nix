@@ -26,6 +26,7 @@ in
     <chaos/grub>
     <chaos/plymouth>
     <chaos/base>
+    <chaos/unfree>
     <chaos/desktop/gnome>
     <chaos/hardware/workstation>
     <chaos/colemak>
@@ -51,6 +52,7 @@ in
     <chaos/grub>
     <chaos/plymouth>
     <chaos/base>
+    <chaos/unfree>
     <chaos/desktop/cosmic>
     <chaos/hardware/framework-13-amd-ai-300>
     <chaos/en-us-intl>
