@@ -10,7 +10,7 @@
           enable = true;
           lfs.enable = true;
           settings = {
-            user.name = user.userName;
+            user.name = user.description;
             user.email = user.gitEmail;
             merge = {
               ff = false;
