@@ -53,7 +53,7 @@ in
     <chaos/plymouth>
     <chaos/base>
     <chaos/unfree>
-    <chaos/desktop/cosmic>
+    <chaos/desktop/gnome>
     <chaos/hardware/framework-13-amd-ai-300>
     <chaos/en-us-intl>
     <chaos/berlin>
