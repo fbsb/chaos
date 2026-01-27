@@ -33,7 +33,7 @@ in
     <chaos/berlin>
     <chaos/network>
     <chaos/flatpak>
-    <chaos/apps/goxlr>
+    <chaos/apps/all>
     <chaos/junction>
     <chaos/zen-browser>
     <chaos/ghostty>
@@ -59,7 +59,7 @@ in
     <chaos/berlin>
     <chaos/network>
     <chaos/flatpak>
-    <chaos/apps/goxlr>
+    <chaos/apps/all>
     <chaos/junction>
     <chaos/zen-browser>
     <chaos/ghostty>
