@@ -1,5 +1,5 @@
 {
-  chaos.goxlr = {
+  chaos.apps.provides.goxlr = {
     nixos = {
       services.goxlr-utility = {
         enable = true;
