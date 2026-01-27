@@ -5,6 +5,7 @@
 {
   chaos.hardware.provides.framework-13-amd-ai-300 = {
     includes = [
+      <chaos/hardware/laptop>
       <chaos/hardware/amd>
       <chaos/hardware/fingerprint>
       <chaos/hardware/sensors>

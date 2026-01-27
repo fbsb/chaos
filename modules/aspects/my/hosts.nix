@@ -55,7 +55,6 @@ in
     <chaos/unfree>
     <chaos/desktop/gnome>
     <chaos/hardware/framework-13-amd-ai-300>
-    <chaos/laptop>
     <chaos/en-us-intl>
     <chaos/berlin>
     <chaos/network>

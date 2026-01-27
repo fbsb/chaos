@@ -1,6 +1,7 @@
 {
-  chaos.system.provides.hibernate = {
+  chaos.system.provides.power = {
     nixos = {
+      powerManagement.enable = true;
       systemd.sleep.extraConfig = ''
         AllowSuspend=yes
         AllowHibernation=yes

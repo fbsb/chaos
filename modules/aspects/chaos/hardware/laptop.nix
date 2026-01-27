@@ -3,13 +3,11 @@
   ...
 }:
 {
-  chaos.laptop = {
+  chaos.hardware.provides.laptop = {
     includes = [
-      <chaos/system/hibernate>
+      <chaos/system/power>
     ];
     nixos = {
-      powerManagement.enable = true;
-
       services.logind.settings.Login = {
         HandleLidSwitch = "suspend-then-hibernate";
       };
