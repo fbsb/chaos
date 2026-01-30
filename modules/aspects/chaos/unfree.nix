@@ -1,5 +1,10 @@
 {
-  chaos.unfree.nixos = {
-    nixpkgs.config.allowUnfree = true;
+  chaos.unfree = {
+    homeManager = {
+      nixpkgs.config.allowUnfree = true;
+    };
+    nixos = {
+      nixpkgs.config.allowUnfree = true;
+    };
   };
 }

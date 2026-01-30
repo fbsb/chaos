@@ -34,10 +34,6 @@ in
     <chaos/network>
     <chaos/flatpak>
     <chaos/apps/all>
-    <chaos/junction>
-    <chaos/zen-browser>
-    <chaos/ghostty>
-    <chaos/vscode>
     <chaos/gpg>
     <chaos/git>
     <chaos/nix-dev>
@@ -60,10 +56,6 @@ in
     <chaos/network>
     <chaos/flatpak>
     <chaos/apps/all>
-    <chaos/junction>
-    <chaos/zen-browser>
-    <chaos/ghostty>
-    <chaos/vscode>
     <chaos/gpg>
     <chaos/git>
     <chaos/nix-dev>

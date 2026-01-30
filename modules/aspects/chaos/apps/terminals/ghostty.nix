@@ -1,5 +1,5 @@
 {
-  chaos.ghostty = {
+  chaos.apps.provides.terminals.provides.ghostty = {
     homeManager = {
       programs.ghostty = {
         enable = true;

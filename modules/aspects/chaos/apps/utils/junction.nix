@@ -1,5 +1,5 @@
 {
-  chaos.junction = {
+  chaos.apps.provides.utils.provides.junction = {
     nixos =
       let
         junctionApp = "re.sonny.Junction";

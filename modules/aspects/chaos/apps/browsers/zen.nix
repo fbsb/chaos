@@ -1,5 +1,5 @@
 {
-  chaos.zen-browser = {
+  chaos.apps.provides.browsers.provides.zen = {
     nixos = {
       services.flatpak = {
         packages = [

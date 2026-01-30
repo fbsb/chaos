@@ -4,7 +4,7 @@
   ...
 }:
 {
-  chaos.vscode = {
+  chaos.apps.provides.ide.provides.vscode = {
     homeManager =
       {
         pkgs,
@@ -24,15 +24,15 @@
           };
         };
 
-        nixpkgs.config = {
-          allowUnfreePredicate =
-            pkg:
-            builtins.elem (lib.getName pkg) [
-              "vscode"
-              "vscode-extension-github-copilot"
-              "vscode-extension-mhutchie-git-graph"
-            ];
-        };
+        # nixpkgs.config = {
+        #   allowUnfreePredicate =
+        #     pkg:
+        #     builtins.elem (lib.getName pkg) [
+        #       "vscode"
+        #       "vscode-extension-github-copilot"
+        #       "vscode-extension-mhutchie-git-graph"
+        #     ];
+        # };
       };
   };
 }
