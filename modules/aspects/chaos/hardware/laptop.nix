@@ -6,6 +6,7 @@
   chaos.hardware.provides.laptop = {
     includes = [
       <chaos/system/power>
+      <chaos/hardware/bluetooth>
     ];
     nixos = {
       services.logind.settings.Login = {
