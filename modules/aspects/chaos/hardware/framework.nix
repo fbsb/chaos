@@ -1,5 +1,6 @@
 {
   __findFile ? __findFile,
+  inputs,
   ...
 }:
 {
@@ -9,8 +10,14 @@
       <chaos/hardware/amd>
       <chaos/hardware/fingerprint>
       <chaos/hardware/sensors>
+      <chaos/hardware/wifi>
       <chaos/hardware/framework/wifi-quirks>
     ];
+    nixos = {
+      imports = [
+        inputs.nixos-hardware.nixosModules.framework-amd-ai-300-series
+      ];
+    };
   };
 
   chaos.hardware.provides.framework.provides.wifi-quirks = {
