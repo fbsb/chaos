@@ -8,10 +8,13 @@ clean-vm:
     fi
 
 boot target="$(hostname -s)" *args='':
-    sudo nixos-rebuild boot --flake ".#{{target}}" {{args}}
+    nixos-rebuild boot --sudo --flake ".#{{target}}" {{args}}
 
 switch target="$(hostname -s)" *args='':
-    sudo nixos-rebuild switch --flake ".#{{target}}" {{args}}
+    nixos-rebuild switch --sudo --flake ".#{{target}}" {{args}}
+
+test target="$(hostname -s)" *args='':
+    nixos-rebuild test --sudo --flake ".#{{target}}" {{args}}
 
 run-vm target="$(hostname -s)" *args='': clean-vm && clean-vm
     $(nixos-rebuild build-vm --flake ".#{{target}}" {{args}}) || true
