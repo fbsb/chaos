@@ -9,6 +9,7 @@
       <chaos/apps/terminals/ghostty>
       <chaos/apps/browsers/zen>
       <chaos/apps/utils/junction>
+      <chaos/apps/utils/galaxy-buds-client>
       <chaos/apps/ide/vscode>
     ];
   };
