@@ -20,28 +20,12 @@ in
   den.homes.x86_64-linux.fbsb = { };
 
   den.aspects.tars.includes = [
+    <chaos/common>
+
     (<chaos/system/disko> {
       device = "/dev/nvme0n1";
       swapSize = "72G";
     })
-    <chaos/system/boot/grub>
-    <chaos/system/boot/graphical>
-    <chaos/cli/git>
-    <chaos/cli/gpg>
-    <chaos/dev/nix-dev>
-    <chaos/dev/src>
-    <chaos/system/flatpak>
-    <chaos/system/network>
-    <chaos/system/pipewire>
-    <chaos/system/unfree>
-    <chaos/system/nix-settings>
-    <chaos/system/utils>
-    <chaos/system/locale/de-berlin>
-    <chaos/system/hostname>
-    <den/define-user>
-    <den/home-manager>
-    <chaos/system/users>
-
     <chaos/hardware/workstation>
     <chaos/system/keymap/colemak>
     <chaos/desktop/gnome>
@@ -49,28 +33,12 @@ in
   ];
 
   den.aspects.case.includes = [
+    <chaos/common>
+
     (<chaos/system/disko> {
       device = "/dev/nvme0n1";
       swapSize = "32G";
     })
-    <chaos/system/boot/grub>
-    <chaos/system/boot/graphical>
-    <chaos/cli/git>
-    <chaos/cli/gpg>
-    <chaos/dev/nix-dev>
-    <chaos/dev/src>
-    <chaos/system/flatpak>
-    <chaos/system/network>
-    <chaos/system/pipewire>
-    <chaos/system/unfree>
-    <chaos/system/nix-settings>
-    <chaos/system/utils>
-    <chaos/system/locale/de-berlin>
-    <chaos/system/hostname>
-    <den/define-user>
-    <den/home-manager>
-    <chaos/system/users>
-
     <chaos/hardware/framework-13-amd-ai-300>
     <chaos/system/keymap/en-us-intl>
     <chaos/desktop/gnome>
