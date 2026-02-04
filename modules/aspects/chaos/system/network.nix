@@ -1,5 +1,5 @@
 {
-  chaos.network = {
+  chaos.system.provides.network = {
     nixos = {
       networking = {
         networkmanager.enable = true;

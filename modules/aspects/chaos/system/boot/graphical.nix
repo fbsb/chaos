@@ -1,5 +1,5 @@
 {
-  chaos.plymouth = {
+  chaos.system.provides.boot.provides.graphical = {
     nixos =
       {
         pkgs,

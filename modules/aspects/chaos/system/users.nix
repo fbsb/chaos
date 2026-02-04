@@ -1,5 +1,5 @@
 {
-  chaos.users =
+  chaos.system.provides.users =
     {
       user,
       ...

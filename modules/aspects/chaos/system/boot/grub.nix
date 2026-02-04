@@ -1,5 +1,5 @@
 {
-  chaos.grub.nixos =
+  chaos.system.provides.boot.provides.grub.nixos =
     {
       pkgs,
       ...

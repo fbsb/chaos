@@ -4,7 +4,7 @@
   ...
 }:
 {
-  chaos.zsh = den.lib.parametric {
+  chaos.shell.provides.zsh = den.lib.parametric {
     includes = [
       (<den/user-shell> "zsh")
     ];
@@ -16,7 +16,6 @@
         ...
       }:
       {
-
         programs.zsh = {
           enable = true;
           autocd = true;

@@ -3,7 +3,7 @@
   ...
 }:
 {
-  chaos.nix = {
+  chaos.system.provides.nix-settings = {
     nixos.nix = {
       channel.enable = lib.mkForce false;
 

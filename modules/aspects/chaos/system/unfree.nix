@@ -1,5 +1,5 @@
 {
-  chaos.unfree = {
+  chaos.system.provides.unfree = {
     homeManager = {
       nixpkgs.config.allowUnfree = true;
     };

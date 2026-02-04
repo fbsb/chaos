@@ -3,7 +3,7 @@
   ...
 }:
 {
-  chaos.base = {
+  chaos.system.provides.utils = {
     nixos =
       { pkgs, ... }:
       {

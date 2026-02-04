@@ -1,5 +1,5 @@
 {
-  chaos.berlin =
+  chaos.system.provides.locale.provides.de-berlin =
     let
       deLocale = "de_DE.UTF-8";
       usLocale = "en_US.UTF-8";

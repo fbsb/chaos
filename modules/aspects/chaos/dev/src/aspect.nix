@@ -10,10 +10,9 @@
     }:
     {
       packages.src = pkgs.callPackage ./_package.nix { };
-
     };
 
-  chaos.src = den.lib.parametric {
+  chaos.dev.provides.src = den.lib.parametric {
     includes = [
       den._.self'
     ];

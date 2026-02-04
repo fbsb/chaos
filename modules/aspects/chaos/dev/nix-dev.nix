@@ -1,5 +1,5 @@
 {
-  chaos.nix-dev = {
+  chaos.dev.provides.nix-dev = {
     homeManager =
       {
         pkgs,

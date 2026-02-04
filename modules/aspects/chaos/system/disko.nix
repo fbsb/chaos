@@ -10,7 +10,7 @@
     };
   };
 
-  chaos.disko =
+  chaos.system.provides.disko =
     {
       device,
 

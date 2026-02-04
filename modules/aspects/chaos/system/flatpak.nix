@@ -9,7 +9,7 @@
     };
   };
 
-  chaos.flatpak = {
+  chaos.system.provides.flatpak = {
     nixos = {
       imports = [
         inputs.nix-flatpak.nixosModules.nix-flatpak

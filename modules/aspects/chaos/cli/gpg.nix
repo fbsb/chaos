@@ -1,5 +1,5 @@
 {
-  chaos.gpg = {
+  chaos.cli.provides.gpg = {
     homeManager =
       {
         pkgs,

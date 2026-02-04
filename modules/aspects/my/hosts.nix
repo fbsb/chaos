@@ -1,5 +1,6 @@
 {
   __findFile ? __findFile,
+  den,
   ...
 }:
 let
@@ -19,58 +20,69 @@ in
   den.homes.x86_64-linux.fbsb = { };
 
   den.aspects.tars.includes = [
-    (<chaos/disko> {
+    (<chaos/system/disko> {
       device = "/dev/nvme0n1";
       swapSize = "72G";
     })
-    <chaos/grub>
-    <chaos/plymouth>
-    <chaos/base>
-    <chaos/unfree>
-    <chaos/desktop/gnome>
-    <chaos/hardware/workstation>
-    <chaos/colemak>
-    <chaos/berlin>
-    <chaos/network>
-    <chaos/flatpak>
-    <chaos/apps/all>
-    <chaos/gpg>
-    <chaos/git>
-    <chaos/nix-dev>
-    <chaos/src>
+    <chaos/system/boot/grub>
+    <chaos/system/boot/graphical>
+    <chaos/cli/git>
+    <chaos/cli/gpg>
+    <chaos/dev/nix-dev>
+    <chaos/dev/src>
+    <chaos/system/flatpak>
+    <chaos/system/network>
     <chaos/system/pipewire>
+    <chaos/system/unfree>
+    <chaos/system/nix-settings>
+    <chaos/system/utils>
+    <chaos/system/locale/de-berlin>
+    <chaos/system/hostname>
+    <den/define-user>
+    <den/home-manager>
+    <chaos/system/users>
+
+    <chaos/hardware/workstation>
+    <chaos/system/keymap/colemak>
+    <chaos/desktop/gnome>
+    <chaos/apps/all>
   ];
 
   den.aspects.case.includes = [
-    (<chaos/disko> {
+    (<chaos/system/disko> {
       device = "/dev/nvme0n1";
       swapSize = "32G";
     })
-    <chaos/grub>
-    <chaos/plymouth>
-    <chaos/base>
-    <chaos/unfree>
-    <chaos/desktop/gnome>
-    <chaos/hardware/framework-13-amd-ai-300>
-    <chaos/en-us-intl>
-    <chaos/berlin>
-    <chaos/network>
-    <chaos/flatpak>
-    <chaos/apps/all>
-    <chaos/gpg>
-    <chaos/git>
-    <chaos/nix-dev>
-    <chaos/src>
+    <chaos/system/boot/grub>
+    <chaos/system/boot/graphical>
+    <chaos/cli/git>
+    <chaos/cli/gpg>
+    <chaos/dev/nix-dev>
+    <chaos/dev/src>
+    <chaos/system/flatpak>
+    <chaos/system/network>
     <chaos/system/pipewire>
+    <chaos/system/unfree>
+    <chaos/system/nix-settings>
+    <chaos/system/utils>
+    <chaos/system/locale/de-berlin>
+    <chaos/system/hostname>
+    <den/define-user>
+    <den/home-manager>
+    <chaos/system/users>
+
+    <chaos/hardware/framework-13-amd-ai-300>
+    <chaos/system/keymap/en-us-intl>
+    <chaos/desktop/gnome>
+    <chaos/apps/all>
   ];
 
   den.aspects.fbsb.includes = [
     <den/primary-user>
-    <chaos/zsh>
+    <chaos/shell/zsh>
   ];
 
   den.default.includes = [
-    <chaos/defaults>
     <chaos/build-vm>
     <my/state-version>
   ];

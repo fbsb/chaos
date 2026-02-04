@@ -1,5 +1,5 @@
 {
-  chaos.git =
+  chaos.cli.provides.git =
     {
       user,
       ...

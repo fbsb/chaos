@@ -1,13 +1,13 @@
 {
-  chaos.colemak = {
+  chaos.system.provides.keymap.provides.en-us-intl = {
     nixos = {
       services.xserver.xkb = {
         layout = "us,us";
-        variant = "colemak,";
+        variant = ",colemak";
         options = "grp:ctrl_shift_bksp_toggle";
       };
 
-      console.keyMap = "colemak";
+      console.keyMap = "us";
     };
   };
 }

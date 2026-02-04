@@ -1,5 +1,5 @@
 {
-  chaos.hostname =
+  chaos.system.provides.hostname =
     {
       host,
       ...
