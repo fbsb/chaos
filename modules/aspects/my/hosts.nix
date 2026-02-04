@@ -38,6 +38,7 @@ in
     <chaos/git>
     <chaos/nix-dev>
     <chaos/src>
+    <chaos/system/pipewire>
   ];
 
   den.aspects.case.includes = [
@@ -60,6 +61,7 @@ in
     <chaos/git>
     <chaos/nix-dev>
     <chaos/src>
+    <chaos/system/pipewire>
   ];
 
   den.aspects.fbsb.includes = [
