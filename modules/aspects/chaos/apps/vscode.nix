@@ -4,7 +4,7 @@
   ...
 }:
 {
-  chaos.apps.provides.ide.provides.vscode = {
+  chaos.apps.provides.vscode = {
     homeManager =
       {
         pkgs,
@@ -35,4 +35,8 @@
         # };
       };
   };
+
+  chaos.apps.provides.all.includes = [
+    <chaos/apps/vscode>
+  ];
 }

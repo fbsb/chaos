@@ -1,5 +1,9 @@
 {
-  chaos.apps.provides.terminals.provides.ghostty = {
+  __findFile ? __findFile,
+  ...
+}:
+{
+  chaos.apps.provides.ghostty = {
     homeManager = {
       programs.ghostty = {
         enable = true;
@@ -22,4 +26,8 @@
       };
     };
   };
+
+  chaos.apps.provides.all.includes = [
+    <chaos/apps/ghostty>
+  ];
 }

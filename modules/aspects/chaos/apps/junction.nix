@@ -1,5 +1,9 @@
 {
-  chaos.apps.provides.utils.provides.junction = {
+  __findFile ? __findFile,
+  ...
+}:
+{
+  chaos.apps.provides.junction = {
     nixos =
       let
         junctionApp = "re.sonny.Junction";
@@ -27,4 +31,8 @@
         };
       };
   };
+
+  chaos.apps.provides.all.includes = [
+    <chaos/apps/junction>
+  ];
 }

@@ -1,5 +1,9 @@
 {
-  chaos.apps.provides.utils.provides.galaxy-buds-client = {
+  __findFile ? __findFile,
+  ...
+}:
+{
+  chaos.apps.provides.galaxy-buds-client = {
     nixos =
       {
         pkgs,
@@ -15,4 +19,8 @@
         ];
       };
   };
+
+  chaos.apps.provides.all.includes = [
+    <chaos/apps/galaxy-buds-client>
+  ];
 }

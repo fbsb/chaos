@@ -1,6 +1,5 @@
 {
   __findFile ? __findFile,
-  den,
   ...
 }:
 let
