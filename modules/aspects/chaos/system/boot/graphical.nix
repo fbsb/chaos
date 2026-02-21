@@ -22,7 +22,7 @@
       in
       {
         boot = {
-          plymouth = withTheme "cuts_alt" {
+          plymouth = {
             enable = true;
           };
 
