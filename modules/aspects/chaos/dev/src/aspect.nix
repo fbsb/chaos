@@ -1,7 +1,11 @@
 {
   den,
+  pkgs,
   ...
 }:
+let
+  mkSrc = pkgs: pkgs.callPackage ./_package.nix { };
+in
 {
   perSystem =
     {
@@ -9,21 +13,18 @@
       ...
     }:
     {
-      packages.src = pkgs.callPackage ./_package.nix { };
+      packages.src = mkSrc pkgs;
     };
 
-  chaos.dev.provides.src = den.lib.parametric {
-    includes = [
-      den._.self'
-    ];
+  chaos.dev.provides.src = {
     homeManager =
       {
-        self',
+        pkgs,
         ...
       }:
       {
-        home.packages = with self'.packages; [
-          src
+        home.packages = [
+          (mkSrc pkgs)
         ];
       };
   };
