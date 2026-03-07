@@ -27,3 +27,14 @@ write-flake:
 
 update *args='':
     nix flake update {{args}}
+
+diff-boot target="$(hostname -s)":
+    nixos-rebuild build --flake ".#{{target}}" --no-reexec
+    nvd diff "/run/booted-system" result
+
+diff-current target="$(hostname -s)":
+    nixos-rebuild build --flake ".#{{target}}" --no-reexec
+    nvd diff "/run/current-system" result
+
+diff-running:
+    nvd diff "/run/booted-system" "/run/current-system"
