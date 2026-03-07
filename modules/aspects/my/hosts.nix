@@ -45,9 +45,6 @@ in
     <chaos/system/keymap/en-us-intl>
     <chaos/desktop/gnome>
     <chaos/apps/all>
-
-    <chaos/virtualisation/virtualbox>
-    <chaos/virtualisation/vmware>
   ];
 
   den.aspects.fbsb.includes = [
