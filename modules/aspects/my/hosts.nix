@@ -27,7 +27,7 @@ in
     })
     <chaos/hardware/workstation>
     <chaos/system/keymap/colemak>
-    <chaos/desktop/gnome>
+    <chaos/desktop/cosmic>
     <chaos/apps/all>
 
     <chaos/virtualisation/virtualbox>
