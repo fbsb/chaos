@@ -8,6 +8,7 @@
     includes = [
       <chaos/cli/git>
       <chaos/cli/gpg>
+      <chaos/cli/nix-utils>
       <chaos/dev/nix-dev>
       <chaos/dev/src>
       <chaos/system/boot/graphical>
