@@ -11,6 +11,7 @@
       <chaos/cli/nix-utils>
       <chaos/dev/nix-dev>
       <chaos/dev/src>
+      <chaos/shell/starship>
       <chaos/system/boot/graphical>
       <chaos/system/boot/grub>
       <chaos/system/flatpak>
