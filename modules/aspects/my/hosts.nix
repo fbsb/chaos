@@ -28,7 +28,6 @@ in
     <chaos/desktop/gnome>
     <chaos/apps/all>
 
-    <chaos/virtualisation/virtualbox>
     <chaos/virtualisation/vmware>
   ];
 
