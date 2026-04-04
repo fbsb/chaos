@@ -1,4 +1,5 @@
 {
+  den,
   __findFile ? __findFile,
   ...
 }:
@@ -17,8 +18,6 @@ in
   den.hosts.x86_64-linux.case.users = users;
 
   den.aspects.tars.includes = [
-    <chaos/common>
-
     (<chaos/system/disko> {
       device = "/dev/nvme0n1";
       swapSize = "72G";
@@ -26,14 +25,9 @@ in
     <chaos/hardware/workstation>
     <chaos/system/keymap/colemak>
     <chaos/desktop/gnome>
-    <chaos/apps/all>
-
-    <chaos/virtualisation/vmware>
   ];
 
   den.aspects.case.includes = [
-    <chaos/common>
-
     (<chaos/system/disko> {
       device = "/dev/nvme0n1";
       swapSize = "32G";
@@ -41,16 +35,19 @@ in
     <chaos/hardware/framework-13-amd-ai-300>
     <chaos/system/keymap/en-us-intl>
     <chaos/desktop/gnome>
-    <chaos/apps/all>
   ];
 
   den.aspects.fbsb.includes = [
+    <chaos/common>
     <den/primary-user>
     <chaos/shell/zsh>
+    <chaos/apps/all>
+    <chaos/virtualisation/vmware>
   ];
 
   den.default.includes = [
     <chaos/build-vm>
     <my/state-version>
+    <chaos/system/unfree>
   ];
 }

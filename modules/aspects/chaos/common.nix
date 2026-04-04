@@ -24,7 +24,6 @@
       <chaos/system/users>
       <chaos/system/utils>
       <den/define-user>
-      <den/home-manager>
     ];
   };
 }

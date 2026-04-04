@@ -11,27 +11,24 @@
   };
 
   inputs = {
-    den.url = "github:vic/den";
+    den.url = "github:vic/den?ref=v0.14.0";
     disko = {
-      inputs.nixpkgs.follows = "nixpkgs";
       url = "github:nix-community/disko";
+      inputs.nixpkgs.follows = "nixpkgs";
     };
-    flake-aspects.url = "github:vic/flake-aspects";
     flake-file.url = "github:vic/flake-file";
     flake-parts = {
-      inputs.nixpkgs-lib.follows = "nixpkgs-lib";
       url = "github:hercules-ci/flake-parts";
+      inputs.nixpkgs-lib.follows = "nixpkgs-lib";
     };
     home-manager = {
-      inputs.nixpkgs.follows = "nixpkgs";
       url = "github:nix-community/home-manager";
+      inputs.nixpkgs.follows = "nixpkgs";
     };
     import-tree.url = "github:vic/import-tree";
     nix-flatpak.url = "github:gmodena/nix-flatpak/?ref=latest";
     nixos-hardware.url = "github:NixOS/nixos-hardware/master";
-    nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
+    nixpkgs.url = "https://channels.nixos.org/nixpkgs-unstable/nixexprs.tar.xz";
     nixpkgs-lib.follows = "nixpkgs";
-    systems.url = "github:nix-systems/default";
   };
-
 }
