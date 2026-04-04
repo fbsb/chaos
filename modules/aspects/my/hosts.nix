@@ -16,8 +16,6 @@ in
   den.hosts.x86_64-linux.tars.users = users;
   den.hosts.x86_64-linux.case.users = users;
 
-  den.homes.x86_64-linux.fbsb = { };
-
   den.aspects.tars.includes = [
     <chaos/common>
 
