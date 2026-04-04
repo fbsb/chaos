@@ -15,6 +15,7 @@
           nixos-rebuild
           mkpasswd
           nvd
+          nh
         ];
       };
     };
