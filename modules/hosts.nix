@@ -35,6 +35,7 @@
       chaotic.gpg
       chaotic.ghostty
       chaotic.starship
+      chaotic.src
     ];
   };
 }
