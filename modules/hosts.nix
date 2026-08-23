@@ -31,6 +31,7 @@
       # add user aspects here
       chaotic.zsh
       chaotic.git
+      chaotic.ghostty
     ];
   };
 }
