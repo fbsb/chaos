@@ -32,6 +32,7 @@
       chaotic.zsh
       chaotic.bash
       chaotic.git
+      chaotic.gpg
       chaotic.ghostty
       chaotic.starship
     ];
