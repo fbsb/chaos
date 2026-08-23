@@ -30,6 +30,7 @@
 
       # add user aspects here
       chaotic.zsh
+      chaotic.bash
       chaotic.git
       chaotic.ghostty
       chaotic.starship
