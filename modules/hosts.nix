@@ -36,6 +36,7 @@
       chaotic.ghostty
       chaotic.starship
       chaotic.src
+      chaotic.nix-dev
     ];
   };
 }
