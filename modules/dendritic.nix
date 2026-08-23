@@ -3,6 +3,8 @@
   imports = [
     (inputs.flake-file.flakeModules.dendritic or { })
     (inputs.den.flakeModules.dendritic or { })
+
+    (inputs.den.namespace "chaotic" true)
   ];
 
   # other inputs may be defined at a module using them.

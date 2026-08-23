@@ -1,5 +1,5 @@
 # host and user definitions for testing
-{ den, ... }: {
+{ den, chaotic, ... }: {
   # tux user at igloo host.
   den.hosts.x86_64-linux.igloo.users.tux = { };
 
