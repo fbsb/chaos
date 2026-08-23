@@ -29,6 +29,7 @@
       (den.batteries.user-shell "zsh")
 
       # add user aspects here
+      chaotic.zsh
     ];
   };
 }
