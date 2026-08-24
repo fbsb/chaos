@@ -1,9 +1,10 @@
 {
   chaotic.ghostty = {
-    homeManager = {
+    homeManager = { pkgs, ... }: {
       programs.ghostty = {
         enable = true;
         enableZshIntegration = true;
+        package = if pkgs.stdenv.hostPlatform.isDarwin then pkgs.ghostty-bin else pkgs.ghostty;
         # clearDefaultKeybinds = true;
         settings = {
           keybind = [
