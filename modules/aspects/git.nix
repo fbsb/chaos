@@ -13,6 +13,16 @@
         programs.git = {
           enable = true;
           lfs.enable = true;
+          ignores = [
+            ".DS_Store"
+            "._*"
+            ".netrwhist"
+            "*.swp"
+            "*.swo"
+            "*~"
+            "Session.vim"
+            "Sessionx.vim"
+          ];
           settings = {
             user.name = user.gitUser or user.description or user.name;
             user.email = user.gitEmail or user.email or "${user.name}@${host.name or "localhost"}";
