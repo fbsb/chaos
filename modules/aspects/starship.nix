@@ -9,10 +9,6 @@
         enableZshIntegration = true;
         enableBashIntegration = true;
         settings = {
-          format = [
-            "$all"
-            "$kubernetes"
-          ];
           add_newline = true;
           kubernetes = {
             disabled = false;
