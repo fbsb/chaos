@@ -14,6 +14,17 @@
         fzf
         kubernetes-helm
       ];
+
+      home.shellAliases = {
+        kubelogin = "kubectl-oidc_login";
+        ktx = "kubectx";
+        kns = "kubens";
+      };
+
+      programs.zsh.oh-my-zsh.plugins = [
+        "kubectl"
+        "k9s"
+      ];
     };
   };
 }
