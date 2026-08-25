@@ -7,6 +7,7 @@
         kubectx
         stern
         kubelogin-oidc
+        fzf
       ];
     };
   };
