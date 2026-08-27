@@ -2,6 +2,7 @@
 {
   imports = [
     (inputs.flake-file.flakeModules.dendritic or { })
+    (inputs.flake-parts.flakeModules.modules)
     (inputs.den.flakeModules.dendritic or { })
 
     (inputs.den.namespace "chaotic" true)
