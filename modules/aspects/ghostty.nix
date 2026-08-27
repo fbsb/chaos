@@ -12,6 +12,15 @@
               isDarwin = pkgs.stdenv.hostPlatform.isDarwin;
               mainKey = if isDarwin then "cmd" else "alt";
               movementKey = if isDarwin then "cmd+alt" else "alt";
+              platformKeys =
+                if isDarwin then
+                  [
+                    "global:super+shift+3=toggle_quick_terminal"
+                  ]
+                else
+                  [
+
+                  ];
             in
             [
               "${mainKey}+t=new_tab"
@@ -24,7 +33,8 @@
               "${movementKey}+left=goto_split:left"
               "${movementKey}+right=goto_split:right"
               "${movementKey}+down=goto_split:down"
-            ];
+            ]
+            ++ platformKeys;
           theme = "light:Monokai Pro Light,dark:Monokai Pro";
           shell-integration-features = "cursor,no-sudo,title,ssh-env,ssh-terminfo,path";
           tab-inherit-working-directory = false;
