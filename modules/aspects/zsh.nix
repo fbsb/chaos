@@ -24,14 +24,6 @@
           size = 1000000;
         };
 
-        autosuggestion = {
-          enable = true;
-          strategy = [
-            "history"
-            "completion"
-          ];
-        };
-
         plugins = [
           {
             name = "zsh-command-time";
