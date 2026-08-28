@@ -10,6 +10,10 @@
         enableCompletion = true;
         enableVteIntegration = true;
 
+        initContent = ''
+          setopt NONOMATCH
+        '';
+
         history = {
           path = "${config.xdg.dataHome}/zsh/zsh_history";
 
